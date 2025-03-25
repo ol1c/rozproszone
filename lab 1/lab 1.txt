@@ -1,0 +1,1 @@
+Uzupełniłem kod z enauczania. Kod zawiera prezentacje linked listy jako priority queue. Daną strukturę można uznać za dynamiczną, ponieważ w trakcie działania programu ilość elementów, które zawiera lista się zmienia, a co za tym idzie ilość pamięci zajmowana przez tą strukturę także się zmienia.
