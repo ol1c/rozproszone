@@ -1,0 +1,8 @@
+Windows udostępnia takie metody komunikacji między procesami: przesyłanie komunikatów, schowek (ang. clipboard) oraz Dynamic Data Exchange.
+Przesyłanie komunikatów (Messages) w Windows pozwala aplikacjom komunikować się poprzez wysyłanie i odbieranie komunikatów okienkowych. Komunikaty systemowe (WM_PAINT, WM_CLOSE) oraz użytkownika (WM_USER + N) mogą być przesyłane między procesami za pomocą funkcji takich jak SendMessage lub PostMessage.
+Schowek Windows (Clipboard) to wspólna przestrzeń pamięci, w której aplikacje mogą przechowywać i odczytywać dane (np. tekst, obrazy). Dzięki temu aplikacje mogą wymieniać informacje, np. użytkownik może skopiować tekst z jednej aplikacji i wkleić go do drugiej. Do obsługi schowka Windows udostępnia funkcje API takie jak OpenClipboard, SetClipboardData, GetClipboardData.
+
+Program receiver.c (windows application) tworzy okno "Receiver Window" i obsługuje własny komunikat WM_USER + 1. 
+Po odebraniu komunikatu wyświetla komunikat MessageBox.
+Program sender.c (console application) znajduje okno "Receiver Window" i wysyła do niego komunikat WM_USER + 1 przy pomocy funkcji SendMessage.
+Przykład pokazuje komunikację międzyprocesową w systemie Windows za pomocą przesyłania komunikatów.
